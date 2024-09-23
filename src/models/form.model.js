@@ -33,6 +33,6 @@ export const Form = z.object({
     firstName: z.string(),
     lastName: z.string(),
     identification: z.string(),
-    email: z.string().email()
+    email: z.string().email().optional(),
   })
 });
