@@ -1,6 +1,7 @@
 import { userData } from "../data/user.data.js";
 import { validateUser } from "../middleware/user.middleware.js";
 import { Router } from "express";
+import { getId } from "../util/getId.js";
 
 const router = Router();
 
@@ -9,7 +10,7 @@ router.get("/", (_req, res) => {
 });
 
 router.post("/", validateUser, (req, res) => {
-    let id = userData.length + 1;
+    let id = getId(userData);
     userData.push({...req.body, id});
     res.status(201).json(req.body);
 });

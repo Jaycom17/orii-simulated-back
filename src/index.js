@@ -14,9 +14,9 @@ app.use(cors({
 }
 ));
 
-app.use("/form", FormRouter);
-app.use("/user", UserRouter);
-app.use("/convenio", ConvenioRouter);
+app.use("/api/v1/form", FormRouter);
+app.use("/api/v1/user", UserRouter);
+app.use("/api/v1/agreement", ConvenioRouter);
 
 app.listen(3000, () => {
     console.log("Server is running on port 3000");
