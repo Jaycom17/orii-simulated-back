@@ -6,12 +6,8 @@ export const Form = z.object({
     "OUTGOING_VIRTUAL", "INCOMING_VIRTUAL"]), // Ajusta los valores si hay otros posibles
   gender: z.string(),
   cta: z.number(),
-  entryDate: z.string().refine(val => /^\d{2}-\d{2}-\d{4}$/.test(val), {
-    message: "Invalid date format, expected DD-MM-YYYY"
-  }),
-  exitDate: z.string().refine(val => /^\d{2}-\d{2}-\d{4}$/.test(val), {
-    message: "Invalid date format, expected DD-MM-YYYY"
-  }),
+  entryDate: z.string().date(),
+  exitDate: z.string().date(),
   originProgram: z.string(),
   destinationProgram: z.string(),
   city: z.string(),

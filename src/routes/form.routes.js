@@ -9,7 +9,7 @@ router.get("/", (_req, res) => {
     res.status(200).json(formData);
 });
 
-router.post("/", validateForm, (req, res) => {
+router.post("/create", validateForm, (req, res) => {
     let id = getId(formData);
     formData.push({...req.body, id});
     res.status(201).json(req.body);
